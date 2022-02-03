@@ -1,0 +1,20 @@
+<div class="top-bar">Budget calculator</div>
+
+<section class="total-budget-section">
+  <h2>{{ total }}</h2>
+</section>
+
+<section class="add-item-section">
+  <div class="add-item-container">
+    <item-form
+      style="padding: 20px;"
+      (submitValues)="addItems($event)"
+    ></item-form>
+  </div>
+</section>
+
+<budget-items
+  [itemList]="budgetItems"
+  (deleteItem)="handleDeleteItem($event)"
+  (updateItem)="handleUpdateItem($event)"
+></budget-items>
